@@ -37,13 +37,13 @@ function TodoFilter({ task }) {
       >
         <i className="fa-solid fa-magnifying-glass ms-2"></i>
       </a>
-      {filteredData.map((value, index) => {
+      {/* {filteredData.map((value, index) => {
         return (
-          <div key={value.id}>
+          <div key={value.index}>
             <div>{value.title}</div>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 }

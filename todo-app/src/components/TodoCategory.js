@@ -4,8 +4,8 @@ function TodoCategory({ task, index, completeTask, removeTask,category }) {
   console.log(task.category);
  
   return (
-    <div className="card">
-     <h3>{task.category}</h3>
+  
+  
         <ul className="list-group list-group-horizontal rounded-0">
           <li className="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
             <p style={{ textDecoration: task.completed ? "line-through" : 'none' }} className="lead fw-normal mb-0">{task.title}</p>
@@ -49,7 +49,7 @@ function TodoCategory({ task, index, completeTask, removeTask,category }) {
           </li>
         </ul>
       
-    </div>
+    
   );
 }
 

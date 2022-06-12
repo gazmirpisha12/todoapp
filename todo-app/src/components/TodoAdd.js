@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Select from 'react-select';
+import Select from "react-select";
 
-function TodoAdd({ addTask }) {
-  const [options,setOptions] = useState([
+function TodoAdd({ addTask, selected }) {
+  const [options] = useState([
     {
       label: "Plans",
       value: "plans",
@@ -20,15 +20,23 @@ function TodoAdd({ addTask }) {
       value: "raports",
     },
   ]);
- 
- 
+
   const [value, setValue] = useState("");
+ // set value for default selection
+ const [selectedValue, setSelectedValue] = useState();
+
+ // handle onChange event of the dropdown
+ const handleChange = e => {
+   setSelectedValue(e.value);
+   console.log(selectedValue);
+ }
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!value) return;
+    // if (!value) return;
 
-    addTask(value);
+    addTask(value,selectedValue);
     setValue("");
+    setSelectedValue("")
   };
   return (
     <div className="pb-2">
@@ -51,19 +59,20 @@ function TodoAdd({ addTask }) {
               <option value={option.value}>{option.label}</option>
             ))}
           </select> */}
-{/* <Select
-        value={selectedClient}
-        onChange={setSelectedOption}
-        onChange={handleSelectChange}
-        options={options}
-      /> */}
-
-{/* <select value={selectedClient} onChange={handleSelectChange}>
+                {/* <Select defaultValue={options} options={options} /> */}
+                <Select
+                defaultValue='None'
+        placeholder="Select Option"
+        value={options.filter(obj => obj.value === selectedValue)} // set selected value
+        options={options} // set list of the data
+        onChange={handleChange} // assign onChange function
+      />
+               
+                {/* <select value={selectedClient} onChange={handleSelectChange}>
                 <option value="one">One</option>
                 <option value="two">Two</option>
                 <option value="three">Three</option>
             </select> */}
-                 
               </div>
               <div>
                 <button type="submit" className="btn btn-primary">

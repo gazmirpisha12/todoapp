@@ -5,47 +5,48 @@ import TodoCategory from "./TodoCategory";
 import TodoFilter from "./TodoFilter";
 import TodoHeader from "./TodoHeader";
 
-function TodoList({filteredData}) {
+function TodoList({filteredData, selected}) {
     console.log(filteredData);
   const [tasks, setTasks] = useState([
     {
       title: "Grab some Pizza",
       completed: true,
       createdTime: "11/6/2022",
-      category: "Plans"
+      category: "Plans",
     },
     {
       title: "Do your workout",
       completed: true,
       createdTime: "10/6/2022",
-      category: "Works"
+      category: "Works",
     },
     {
       title: "Hangout with friends",
       completed: false,
       createdTime: "12/6/2022",
-      category: "Studies"
+      category: "Studies",
     },
     {
         title: "Do your workout",
         completed: true,
         createdTime: "10/6/2022",
-        category: "Kitap"
+        category: "Kitap",
       },
       {
         title: "Hangout with friends",
         completed: false,
         createdTime: "12/6/2022",
-        category: "Kitap"
+        category: "Kitap",
       },
   ]);
 
  
-  const addTask = title => {
+  const addTask = (title,selectedValue) => {
     const current = new Date();
+    console.log(selectedValue)
     const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
     console.log(date);
-    const newTasks = [...tasks, { title, completed: false, createdTime:date  }];
+    const newTasks = [...tasks, { title, completed: false, createdTime:date, category:selectedValue }];
     setTasks(newTasks);
 };
 
@@ -79,13 +80,15 @@ const removeTask = index => {
                 </div>
                 <div className="col">
                 <h4>Category</h4>
-                
-                {tasks.filter(task => task.category).map((item, index) => (
+                {tasks.map((task, index) => (
+                    <TodoCategory task={task} index={index} key={index} createdTime={task.createdTime} completeTask={completeTask} removeTask={removeTask}/>
+                  ))}
+                {/* {tasks.filter(task => task.category).map((item, index) => (
                     
                     <TodoCategory task={item} index={index} key={index} createdTime={item.createdTime} completeTask={completeTask} removeTask={removeTask} name={item.category}/>
                 
                    
-                  ))}
+                  ))} */}
                   
                 </div>
               </div>
