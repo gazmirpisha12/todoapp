@@ -13,3 +13,21 @@
     border-radius: .75rem; 
     background-color: #eff1f2;
   }
+
+  /* .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   
+} */
+
+.flex-container {
+  display: flex;
+}
+
+.flex-child {
+  flex: 1;
+}  
+
+.flex-child:first-child {
+  margin-right: 10px;
+} 

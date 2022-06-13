@@ -1,43 +1,34 @@
 import React, { useState } from "react";
 import Select from "react-select";
 
-function TodoAdd({ addTask, selected }) {
-  const [options] = useState([
-    {
-      label: "Plans",
-      value: "plans",
-    },
-    {
-      label: "Work",
-      value: "work",
-    },
-    {
-      label: "Studies",
-      value: "studies",
-    },
-    {
-      label: "Raports",
-      value: "raports",
-    },
-  ]);
+function TodoAdd({ addTask }) {
 
+  const options = [
+    { value: 'None', text: 'Choose an option' },
+    { value: 'Today', text: 'Today' },
+    { value: 'Next Week', text: 'Next Week' },
+    { value: 'Next Month', text: 'Next Month' },
+  ];
+
+  const [selected, setSelected] = useState(options[0].value);
+
+  const handleChange = event => {
+    console.log(event.target.value);
+    setSelected(event.target.value);
+  };
   const [value, setValue] = useState("");
- // set value for default selection
- const [selectedValue, setSelectedValue] = useState();
 
- // handle onChange event of the dropdown
- const handleChange = e => {
-   setSelectedValue(e.value);
-   console.log(selectedValue);
- }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // if (!value) return;
 
-    addTask(value,selectedValue);
+    addTask(value, selected);
     setValue("");
-    setSelectedValue("")
+    setSelected("None")
   };
+
+
   return (
     <div className="pb-2">
       <form onSubmit={handleSubmit}>
@@ -54,29 +45,19 @@ function TodoAdd({ addTask, selected }) {
               />
               <div class="form-control d-flex justify-content-end align-items-center">
                 <p class="small mb-0 me-2 text-muted">Category</p>
-                {/* <select className="select" value={options}>
-            {options.map((option) => (
-              <option value={option.value}>{option.label}</option>
-            ))}
-          </select> */}
-                {/* <Select defaultValue={options} options={options} /> */}
-                <Select
-                defaultValue='None'
-        placeholder="Select Option"
-        value={options.filter(obj => obj.value === selectedValue)} // set selected value
-        options={options} // set list of the data
-        onChange={handleChange} // assign onChange function
-      />
-               
-                {/* <select value={selectedClient} onChange={handleSelectChange}>
-                <option value="one">One</option>
-                <option value="two">Two</option>
-                <option value="three">Three</option>
-            </select> */}
+
+                <select className="form-select w-50" value={selected} onChange={handleChange}>
+                  {options.map(option => (
+                    <option key={option.value} value={option.value}>
+                      {option.text}
+                    </option>
+                  ))}
+                </select>
+
               </div>
               <div>
-                <button type="submit" className="btn btn-primary">
-                  Add
+                <button data-mdb-toggle="tooltip" title="Add task" type="submit" className="btn">
+                  <i tooltip style={{ color: '#0dcaf0' }} class="fa-solid fa-circle-plus fa-2x"  ></i>
                 </button>
               </div>
             </div>

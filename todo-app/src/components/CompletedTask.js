@@ -7,7 +7,7 @@ function CompletedTask({ task, index, completeTask }) {
       style={{ textDecoration: task.completed ? "line-through" : 'none' }}
     >
       {task.title}
-      <a onClick={() => completeTask(index)}></a>
+      <a onClick={() => completeTask(task.id)}></a>
     </div>
   );
 }
