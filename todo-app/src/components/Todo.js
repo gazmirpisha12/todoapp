@@ -61,8 +61,8 @@ function Todo({task,index,completeTask,removeTask}) {
                                                 title="Created date"
                                             >
                                                 <p className="small mb-0">
-                                                    <i className="fas fa-info-circle me-2"></i>
-                                                    {task.createdTime}
+                                                    <i style={{color: '#0dcaf0'}} className="fas fa-filter-circle me-2"></i>
+                                                   
                                                 </p>
                                             </a>
                                         </div>

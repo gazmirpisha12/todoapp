@@ -3,7 +3,7 @@ import Data from "../data/data";
 function Buttons({ filterItem, setItem, menuItems }) {
   return (
     <>
-      
+      <div className="d-flex flex-row bd-highlight">
         {menuItems.map((Val, id) => {
           return (
             
@@ -25,7 +25,7 @@ function Buttons({ filterItem, setItem, menuItems }) {
         
 
        
-     
+      </div>
     </>
   )
 }

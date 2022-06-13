@@ -11,6 +11,7 @@ function TodoList() {
   const [tasks, setTasks] = useState(Data);
 
   console.log(tasks);
+  // Adding Tasks
   const addTask = (title, selectedValue, id) => {
     const current = new Date();
     console.log(selectedValue);
@@ -32,6 +33,8 @@ function TodoList() {
     ];
     setTasks(newTasks);
     console.log(tasks);
+    localStorage.setItem('user', JSON.stringify(newTasks));
+
   };
 
   const completeTask = (index) => {
@@ -85,6 +88,7 @@ function TodoList() {
         post.title.toLowerCase().includes(search.toLowerCase())
       )
     );
+    
   }, [search, tasks]);
   console.log(search, tasks);
   console.log(search);
@@ -120,18 +124,20 @@ function TodoList() {
                   ))} */}
                 </div>
                 <div className="col">
-                  <div class="flex-container">
-                    <div class="flex-child magenta">
-                      <h4 className="center">Category {array.length}</h4>
-                    </div>
+                  
+                  <div class="d-flex justify-content-sm-between">
+                   
+                      <h4>Category {array.length}</h4>
+                   
 
-                    <div class="flex-child green">
-                      <Buttons
+                   
+                      
+                      <Buttons className="px-1"
                         filterItem={filterItem}
                         setItem={setTasks}
                         menuItems={menuItems}
                       />
-                    </div>
+                    
                   </div>
                   <Tasks
                     tasks={tasks}

@@ -29,6 +29,21 @@ function Tasks({ tasks, completeTask, removeTask }) {
 
                                             <li className="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
                                                 <div className="d-flex flex-row justify-content-end mb-1">
+
+                                               
+                                                        <a
+                                                        href="#!"
+                                                        className="text-muted px-3"
+                                                        data-mdb-toggle="tooltip"
+                                                        title="Category"
+                                                    >
+                                                        <p className="small mb-0">
+                                                           
+                                                            {Val.category}
+                                                        </p>
+                                                    </a>
+
+
                                                     <a
                                                         href="#!"
                                                         className="text-info"
@@ -56,7 +71,7 @@ function Tasks({ tasks, completeTask, removeTask }) {
                                                         title="Created date"
                                                     >
                                                         <p className="small mb-0">
-                                                            <i className="fas fa-info-circle me-2"></i>
+                                                            <i style={{color: '#0dcaf0'}} className="fas fa-info-circle me-2"></i>
                                                             {Val.createdTime}
                                                         </p>
                                                     </a>
@@ -64,7 +79,7 @@ function Tasks({ tasks, completeTask, removeTask }) {
                                             </li>
                                         </ul>
                                     </div>
-                                    <div className="card-text">{Val.category}</div>
+                                    {/* <div className="card-text">{Val.category}</div> */}
                                 </div>
                             </div>
                         );
