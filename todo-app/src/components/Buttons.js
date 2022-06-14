@@ -23,8 +23,6 @@ function Buttons({ filterItem, setItem, menuItems }) {
           All
         </button>
         
-
-       
       </div>
     </>
   )

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Card, Input } from 'semantic-ui-react'
+import React from "react";
+import { Input } from 'semantic-ui-react'
 
 function TodoFilter({searchItems,search,setSearch}) {
 
@@ -10,7 +10,7 @@ function TodoFilter({searchItems,search,setSearch}) {
                 onChange={event => {
                     setSearch(event.target.value);
                   }}
-                // onChange={(e) => searchItems(e.target.value)}
+
             />
      
     </div>

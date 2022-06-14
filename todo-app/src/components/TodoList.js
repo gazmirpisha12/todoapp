@@ -10,7 +10,8 @@ import TodoFilter from "./TodoFilter";
 function TodoList() {
   const [tasks, setTasks] = useState(Data);
 
-  console.log(tasks);
+  // console.log(tasks);
+
   // Adding Tasks
   const addTask = (title, selectedValue, id) => {
     const current = new Date();
@@ -37,17 +38,21 @@ function TodoList() {
 
   };
 
+  //Complete/Uncomplete Method
   const completeTask = (index) => {
     const newTasks = [...tasks];
     newTasks[index].completed = !newTasks[index].completed;
     setTasks(newTasks);
   };
+
+  // Delete Todo Ask Method
   const removeTask = (index) => {
     const newTasks = [...tasks];
     newTasks.splice(index, 1);
     setTasks(newTasks);
   };
 
+  // Categorize Todo Method
   const categorizedData = tasks.reduce((acc, curr) => {
     const { category, title, createdTime, completed } = curr;
 
@@ -61,14 +66,14 @@ function TodoList() {
     return acc;
   }, {});
 
-  console.log("categorizedData", categorizedData);
+  // console.log("categorizedData", categorizedData);
 
   const array = [];
 
   for (const [index, value] of Object.entries(categorizedData)) {
     array.push([value, index]);
   }
-  console.log("Lists", array);
+  // console.log("Lists", array);
 
   const menuItems = [...new Set(Data.map((Val) => Val.category))];
 
@@ -90,8 +95,8 @@ function TodoList() {
     );
     
   }, [search, tasks]);
-  console.log(search, tasks);
-  console.log(search);
+  // console.log(search, tasks);
+  // console.log(search);
 
   return (
     <div className="container py-5 h-100">
@@ -125,12 +130,9 @@ function TodoList() {
                 </div>
                 <div className="col">
                   
-                  <div class="d-flex justify-content-sm-between">
+                  <div className="d-flex justify-content-sm-between">
                    
                       <h4>Category {array.length}</h4>
-                   
-
-                   
                       
                       <Buttons className="px-1"
                         filterItem={filterItem}

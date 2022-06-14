@@ -79,7 +79,6 @@ function Tasks({ tasks, completeTask, removeTask }) {
                                             </li>
                                         </ul>
                                     </div>
-                                    {/* <div className="card-text">{Val.category}</div> */}
                                 </div>
                             </div>
                         );

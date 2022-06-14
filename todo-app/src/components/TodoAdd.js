@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Select from "react-select";
 
 function TodoAdd({ addTask }) {
 
@@ -21,8 +20,6 @@ function TodoAdd({ addTask }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if (!value) return;
-
     addTask(value, selected);
     setValue("");
     setSelected("None")
@@ -43,8 +40,8 @@ function TodoAdd({ addTask }) {
                 onChange={(e) => setValue(e.target.value)}
                 value={value}
               />
-              <div class="form-control d-flex justify-content-end align-items-center">
-                <p class="small mb-0 me-2 text-muted">Category</p>
+              <div className="form-control d-flex justify-content-end align-items-center">
+                <p className="small mb-0 me-2 text-muted">Category</p>
 
                 <select className="form-select w-50" value={selected} onChange={handleChange}>
                   {options.map(option => (
@@ -57,7 +54,7 @@ function TodoAdd({ addTask }) {
               </div>
               <div>
                 <button data-mdb-toggle="tooltip" title="Add task" type="submit" className="btn">
-                  <i tooltip style={{ color: '#0dcaf0' }} class="fa-solid fa-circle-plus fa-2x"  ></i>
+                  <i tooltip style={{ color: '#0dcaf0' }} className="fa-solid fa-circle-plus fa-2x"  ></i>
                 </button>
               </div>
             </div>
