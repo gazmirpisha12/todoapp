@@ -24,12 +24,6 @@ To Do
 This URL has the application deployed in
 
 
-## Live Application URL
-
-The Application is deployed in https://aditya-sridhar.github.io/simple-reactjs-app
-
-Click on the link to see the application
-
 ## Cloning and Running the Application in local
 
 Clone the project into local
