@@ -8,6 +8,7 @@ This Project is a Simple ReactJS Project which demonstrates the following
 1. Creating a Component in React
 2. Communicating between components
 4. Using Bootstrap along with React
+5. Creating a notebook app to add, manage, and organize a group of notes.
 
 To Do
 •	Create a form

@@ -124,9 +124,7 @@ function TodoList() {
                       />
                     ))
                   )}
-                  {/* {tasks.map((task, index) => (
-                    <Todo task={task} index={index} key={index} createdTime={task.createdTime} completeTask={completeTask} removeTask={removeTask}/>
-                  ))} */}
+                 
                 </div>
                 <div className="col">
                   
