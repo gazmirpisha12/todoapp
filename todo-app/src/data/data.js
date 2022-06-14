@@ -1,50 +1,50 @@
 const Data = [
     {
       id: "1",
-      title: "Poha",
+      title: "Read Book",
       category: "Today",
       completed: true,
       createdTime: "11/6/2022"
     },
     {
       id: "2",
-      title: "Upma",
+      title: "Organize Office",
       category: "Today",
       completed: true,
       createdTime: "11/6/2022"
     },
     {
       id: "3",
-      title: "Cheela",
+      title: "Meet with John Doe",
       category: "Next Week",
       completed: true,
       createdTime: "11/6/2022"
     },
     {
       id: "4",
-      title: "Channa Kulcha",
+      title: "Organize Files and Raports",
       category: "Today",
       completed: true,
       createdTime: "11/6/2022"
     },
     {
       id: "5",
-      title: "Egg Curry",
+      title: "Go to Gym",
       category: "Next Week",
       completed: false,
       createdTime: "11/6/2022"
     },
     {
       id: "6",
-      title: "Paneer Aachari",
+      title: "Pay bills",
       category: "Next Month",
       completed: true,
       createdTime: "11/6/2022"
     },
     {
       id: "7",
-      title: "Fish Fry",
-      category: "Today",
+      title: "Buy office stuff",
+      category: "Next Week",
       completed: false,
       createdTime: "11/6/2022"
     }
